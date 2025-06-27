@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ishit Patel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    header {
+      background: linear-gradient(135deg, #1f6feb, #3fb950);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #161b22;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #58a6ff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #3fb950;
+    }
+    section {
+      padding: 2rem;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .projects, .jobs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .project, .job {
+      background: #161b22;
+      color: #c9d1d9;
+      border: 1px solid #30363d;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      width: calc(33% - 2rem);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project:hover, .job:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 10px #1f6feb;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #161b22;
+      color: #8b949e;
+    }
+    a {
+      color: #58a6ff;
+    }
+    a:hover {
+      color: #3fb950;
+    }
+    @media (max-width: 768px) {
+      .project, .job {
+        width: 100%;
+      }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ishit Patel</h1>
+    <p>Machine Learning Engineer | Software Engineer | Data Scientist</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+        Machine Learning Engineer with a strong foundation in data analysis, deep learning, and model deployment.
+        Proficient in Python, PyTorch, and TensorFlow, with hands-on experience building scalable AI systems and
+        end-to-end ML pipelines. Demonstrated success in research and real-world projects that involve computer vision,
+        federated learning, and reinforcement learning.
+    </p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="jobs">
+      <div class="job">
+        <h3>Graduate Researcher – SFSU</h3>
+        <p><strong>Aug 2023 – Present</strong></p>
+        <ul>
+          <li>RL-based client selection for federated learning (↑12% accuracy, ↓30% convergence time)</li>
+          <li>Built async aggregation framework; improved training throughput</li>
+          <li>Tools: PyTorch, TensorBoard, AWS EC2, NumPy, Flower</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Deep Learning Intern – Kroop AI</h3>
+        <p><strong>Aug 2021 – Dec 2021</strong></p>
+        <ul>
+          <li>Created deepfake system using LatentFlow Diffusion + Wave2Lip GANs</li>
+          <li>Optimized with landmark detection for 27% performance boost</li>
+          <li>Tools: PyTorch, Docker, AWS EC2</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Research Intern – IIM Ahmedabad</h3>
+        <p><strong>May 2021 – Aug 2021</strong></p>
+        <ul>
+          <li>Analyzed GoFundMe campaigns; image-based race classification</li>
+          <li>Tools: TensorFlow, OpenCV, scikit-learn, Pandas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>LLM-Powered Summarization Tool</h3>
+        <ul>
+          <li>Fine-tuned T5 for summarizing technical docs</li>
+          <li>Real-time Flask app with Hugging Face + PyTorch</li>
+        </ul>
+      </div>
+      <div class="project">
+        <h3>ECCV’20 MiniCity Segmentation</h3>
+        <ul>
+          <li>Hourglass autoencoders for semantic segmentation in self-driving</li>
+          <li>Real-time performance with CUDA optimization</li>
+        </ul>
+      </div>
+      <div class="project">
+        <h3>3D Reconstruction of Faces</h3>
+        <ul>
+          <li>Used Basel Face Model + Bump Mapping for 3D face models from 2D</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:ishitppatel@gmail.com">ishitppatel@gmail.com</a></p>
+    <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/ishit-patel" target="_blank">LinkedIn</a></p>
+    <p><i class="fab fa-github"></i> <a href="https://github.com/IshitPatel" target="_blank">GitHub</a></p>
+    <p><i class="fas fa-map-marker-alt"></i> San Francisco, CA</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ishit Patel. All rights reserved.</p>
+  </footer>
+</body>
+</html>

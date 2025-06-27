@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ishit Patel | Machine Learning Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --bg: #0d1117;
+      --primary: #58a6ff;
+      --accent: #3fb950;
+      --text: #c9d1d9;
+      --subtext: #8b949e;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #161b22;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: var(--primary);
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .card {
+      background-color: #161b22;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid #30363d;
+      transition: 0.3s ease;
+    }
+    .card:hover {
+      box-shadow: 0 0 12px var(--primary);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #161b22;
+      color: var(--subtext);
+    }
+    h1, h2 {
+      margin-bottom: 1rem;
+    }
+    a {
+      color: var(--primary);
+    }
+    a:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ishit Patel</h1>
+    <p>Machine Learning Engineer | Software Engineer | Data Scientist</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Machine Learning Engineer with a strong foundation in data analysis, deep learning, and model deployment.
+      Proficient in Python, PyTorch, and TensorFlow, with hands-on experience building scalable AI systems and
+      end-to-end ML pipelines. Demonstrated success in research and real-world projects in computer vision,
+      federated learning, and reinforcement learning.
+    </p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Graduate Researcher – SFSU</h3>
+        <p>Aug 2023 – Present</p>
+        <ul>
+          <li>RL-based client selection for federated learning</li>
+          <li>+12% accuracy, -30% convergence time</li>
+          <li>Tools: PyTorch, AWS, Flower</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Deep Learning Intern – Kroop AI</h3>
+        <p>Aug 2021 – Dec 2021</p>
+        <ul>
+          <li>Deepfake system using LatentFlow + Wave2Lip</li>
+          <li>Optimized with landmark detection</li>
+          <li>Tools: PyTorch, Docker, AWS</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Research Intern – IIM Ahmedabad</h3>
+        <p>May 2021 – Aug 2021</p>
+        <ul>
+          <li>GoFundMe ML pipeline & race classification</li>
+          <li>Tools: TensorFlow, OpenCV, Pandas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>LLM-Powered Summarization Tool</h3>
+        <p>Fine-tuned T5 for summarizing technical docs. Deployed using Flask + Hugging Face.</p>
+      </div>
+      <div class="card">
+        <h3>ECCV’20 MiniCity Segmentation</h3>
+        <p>Semantic segmentation for self-driving scenes using hourglass autoencoders. CUDA optimized.</p>
+      </div>
+      <div class="card">
+        <h3>3D Reconstruction of Faces</h3>
+        <p>Basel Face Model + bump mapping to reconstruct 3D faces from 2D images.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:ishitppatel@gmail.com">ishitppatel@gmail.com</a></p>
+    <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/ishit-patel" target="_blank">LinkedIn</a></p>
+    <p><i class="fab fa-github"></i> <a href="https://github.com/IshitPatel" target="_blank">GitHub</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ishit Patel. Built with 💻 and passion.</p>
+  </footer>
+</body>
+</html>
