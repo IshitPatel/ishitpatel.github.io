@@ -5,11 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ishit Patel | ML Engineer</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="css/styles.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script defer src="script.js"></script>
+  <!-- Loader imports partials (nav/footer) then loads the main JS module -->
+  <script type="module" src="js/loader.js"></script>
 </head>
 <body>
   <section id="hero">
@@ -32,13 +33,8 @@
     </div>
   </section>
 
-  <nav id="navbar">
-    <a href="#hero">Home</a>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <!-- Nav will be injected here from partials/nav.html -->
+  <div id="nav-placeholder"></div>
 
   <section id="about">
     <h2>About Me</h2>
@@ -58,7 +54,7 @@
 
       <div class="timeline-item left">
         <div class="timeline-content">
-          <h3>Applied Researcher – SF State ML Lab</h3>
+          <h3>Machine Learning Engineer – SF State ML Lab</h3>
           <span class="timeline-date">Aug 2024 – Present</span>
           <p>Developed RL-based client selection with a novel reward function for federated learning. Achieved 37% faster convergence and 12.5% accuracy gain over FedAvg.</p>
           <p><strong>Tools:</strong> PyTorch, TensorBoard, AWS EC2, Flower</p>
@@ -76,8 +72,8 @@
 
       <div class="timeline-item left">
         <div class="timeline-content">
-          <h3>ML Engineer – Kroop AI</h3>
-          <span class="timeline-date">Aug 2021 – Aug 2022</span>
+          <h3>Software Engineer, ML – Kroop AI</h3>
+          <span class="timeline-date">May 2021 – Aug 2022</span>
           <p>Led development of a deepfake generation system with LatentFlow and Wave2Lip. Improved video quality and cut compute cost by 27%.</p>
           <p><strong>Tools:</strong> Python, PyTorch, Azure, Docker</p>
         </div>
@@ -97,20 +93,73 @@
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="card-grid">
+    <div class="projects-grid">
 
-      <div class="card">
-        <h3>LLM-Powered Summarization Tool</h3>
-        <p>Fine-tuned T5 on 10,000+ docs for 23% ROUGE-L improvement; deployed real-time Flask app.</p>
-        <p><strong>Tools:</strong> Python, Hugging Face, PyTorch, Flask</p>
+      <article class="project-card" data-project-id="summarizer">
+        <div class="project-thumb" aria-hidden="true"></div>
+        <div class="project-body">
+          <h3 class="project-title">LLM-Powered Summarization Tool</h3>
+          <p class="project-desc">Fine-tuned T5 on 10,000+ docs for a 23% ROUGE-L improvement. Deployed as a real-time Flask service with async batching.</p>
+          <div class="tech-tags">
+            <span>Python</span>
+            <span>Hugging Face</span>
+            <span>PyTorch</span>
+            <span>Flask</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn" href="https://github.com/IshitPatel/" target="_blank" rel="noopener">Repository</a>
+            <button class="btn outline" data-open="summarizer">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card" data-project-id="minicity">
+        <div class="project-thumb" style="background-image: linear-gradient(135deg,#1f6feb,#3fb950);" aria-hidden="true"></div>
+        <div class="project-body">
+          <h3 class="project-title">ECCV'20 MiniCity Segmentation</h3>
+          <p class="project-desc">Hourglass autoencoders improved segmentation accuracy by 15% while improving inference throughput by 1.5x.</p>
+          <div class="tech-tags">
+            <span>PyTorch</span>
+            <span>OpenCV</span>
+            <span>CUDA</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn" href="https://github.com/IshitPatel/Minicity-Segmentation" target="_blank" rel="noopener">Github</a>
+            <button class="btn outline" data-open="minicity">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card" data-project-id="teachmefinance">
+        <div class="project-thumb" style="background-image: linear-gradient(135deg,#7743e8,#1f6feb);" aria-hidden="true"></div>
+        <div class="project-body">
+          <h3 class="project-title">TeachMeFinance</h3>
+          <p class="project-desc">LLM-based financial-education chatbot that runs against a local Ollama API for low-latency responses.</p>
+          <div class="tech-tags">
+            <span>LLM</span>
+            <span>Ollama</span>
+            <span>Node</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn" href="https://github.com/IshitPatel/TeachMeFinance" target="_blank" rel="noopener">Github</a>
+            <button class="btn outline" data-open="teachmefinance">Details</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Project detail modal (single reusable modal) -->
+    <div id="project-modal" class="modal" aria-hidden="true">
+      <div class="modal-panel" role="dialog" aria-modal="true">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-content">
+          <h3 id="modal-title"></h3>
+          <p id="modal-desc"></p>
+          <div id="modal-tech" class="tech-tags"></div>
+          <div id="modal-links" class="project-actions"></div>
+        </div>
       </div>
-
-      <div class="card">
-        <h3>ECCV’20 MiniCity Segmentation</h3>
-        <p>Hourglass autoencoders improved segmentation accuracy by 15% and inference by 1.5x.</p>
-        <p><strong>Tools:</strong> PyTorch, OpenCV, CUDA</p>
-      </div>
-
     </div>
   </section>
 
@@ -154,8 +203,7 @@
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Ishit Patel. All rights reserved.</p>
-  </footer>
+  <!-- Footer will be injected here from partials/footer.html -->
+  <div id="footer-placeholder"></div>
 </body>
 </html>
